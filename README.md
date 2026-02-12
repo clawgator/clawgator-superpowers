@@ -1,6 +1,6 @@
 # ClawGator Superpowers
 
-<img src="logo.jpg" alt="ClawGator Superpowers Logo" width="200">
+<img src="logo.jpg" alt="ClawGator Superpowers Logo" width="100%">
 
 Framework pengembangan perangkat lunak lengkap untuk pengguna ClawGator.
 
