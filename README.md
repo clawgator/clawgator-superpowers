@@ -46,6 +46,8 @@ Skill ini mendukung dua bahasa / This skill supports two languages:
 
 ---
 
+<img src="github-credits.jpg" alt="GitHub Credits" width="100%">
+
 ## Fitur Utama / Key Features
 
 ### 💡 Brainstorming & Design
@@ -395,19 +397,6 @@ Phase 4: Fix & Verify
 | **Team / Tim** | ClawGator Team |
 | **Language Support / Dukungan Bahasa** | 🌏 Bahasa Indonesia & English |
 | **OpenClaw Engine** | >= 2026.2.0 |
-
----
-
-## ✍️ Co-Authors / Penulis Bersama
-
-This project is developed with co-authorship between:
-- **Rengga** (@clawgator) - Core development / Pengembangan utama
-- **openclaw** (@openclaw) - Community integration & support / Integrasi komunitas & dukungan
-
-All commits in this repository include co-authorship information with the format:
-```
-Co-authored-by: openclaw <peter@openclaw.ai>
-```
 
 ---
 
