@@ -46,7 +46,7 @@ Skill ini mendukung dua bahasa / This skill supports two languages:
 
 ---
 
-<img src="github-credits.jpg" alt="GitHub Credits" width="100%">
+<img src="github-credits.jpg" alt="GitHub Credits" width="35%">
 
 ## Fitur Utama / Key Features
 
