@@ -401,10 +401,13 @@ Phase 4: Fix & Verify
 ## ✍️ Co-Authors / Penulis Bersama
 
 This project is developed with co-authorship between:
-- **ClawGator Team** (@clawgator) - Core development / Pengembangan utama
-- **OpenClaw** (@openclaw) - Community integration & support / Integrasi komunitas & dukungan
+- **Rengga** (@clawgator) - Core development / Pengembangan utama
+- **openclaw** (@openclaw) - Community integration & support / Integrasi komunitas & dukungan
 
-All commits in this repository include co-authorship information.
+All commits in this repository include co-authorship information with the format:
+```
+Co-authored-by: openclaw <peter@openclaw.ai>
+```
 
 ---
 
