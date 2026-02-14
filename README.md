@@ -99,7 +99,7 @@ Skill ini mendukung dua bahasa / This skill supports two languages:
 
 ---
 
-## 14 Sub-Skills Lengkap / Complete Sub-Skills
+## 15 Sub-Skills Lengkap / Complete Sub-Skills
 
 | Skill | Kategori | Category | Fungsi / Function |
 |-------|---------|----------|-------------------|
@@ -117,6 +117,7 @@ Skill ini mendukung dua bahasa / This skill supports two languages:
 | **requesting-code-review** | Review | Review | Review code terhadap plan |
 | **receiving-code-review** | Review | Review | Apply feedback dari review |
 | **writing-skills** | Meta | Meta | Buat skill OpenClaw baru |
+| **frontend-design** | Design | Design | UI/UX dengan aesthetic tinggi |
 
 ---
 
@@ -129,60 +130,24 @@ Skill ini mendukung dua bahasa / This skill supports two languages:
 openclaw --version
 ```
 
-### Method 1: Local Installation (Recommended / Direkomendasikan)
+### Method 1: Workspace Installation (Recommended / Direkomendasikan)
 
 ```bash
-# Clone atau download skill ini
-# Clone or download this skill
+# Skill ini sudah ada di workspace OpenClaw
+# This skill is already in OpenClaw workspace
+# Location: ~/.openclaw/workspace/skills/clawgator-superpowers/
 
-# Copy ke extensions OpenClaw / Copy to OpenClaw extensions
-cp -r /home/clawgator-superpowers ~/.openclaw/extensions/
-
-# Pastikan struktur folder benar / Verify folder structure
-ls -la ~/.openclaw/extensions/clawgator-superpowers/
+# Verify struktur folder / Verify folder structure
+ls -la ~/.openclaw/workspace/skills/clawgator-superpowers/
 # Expected output:
 # - SKILL.md
-# - openclaw.plugin.json
 # - package.json
 # - README.md
-# - references/
-# - skills/ (14 sub-skills)
+# - LICENSE
+# - skills/ (15 sub-skills)
 
-# Update openclaw.json config
-nano ~/.openclaw/openclaw.json
-
-# Tambahkan ke plugins.allow / Add to plugins.allow:
-{
-  "plugins": {
-    "allow": [
-      "whatsapp",
-      "clawgator-superpowers"    <-- Tambahkan ini / Add this
-    ],
-    "entries": {
-      "clawgator-superpowers": {
-        "enabled": true,
-        "config": {
-          "brainstormingMode": "standard",
-          "maxTasksPerPlan": 5,
-          "enableVerification": true,
-          "saveDesignDocs": true,
-          "tddEnforced": true,
-          "debuggingStrictMode": true,
-          "useGitWorktrees": true
-        }
-      }
-    }
-  }
-}
-
-# Restart OpenClaw gateway untuk reload skill / Restart gateway to reload skill
-kill -USR1 $(pgrep openclaw-gateway)
-
-# Atau restart service / Or restart service
-systemctl restart openclaw-gateway
-
-# Verify skill sudah terinstall / Verify skill is installed
-openclaw skills list | grep clawgator
+# Skill akan otomatis diload saat session baru
+# Skill will auto-load on new session
 ```
 
 ### Method 2: Install via ClawHub (Future / Mendatang)
@@ -249,36 +214,6 @@ Skill akan otomatis / Skill will automatically:
 
 ---
 
-## 🔧 Available Tools / Tools Tersedia
-
-| Tool | Deskripsi / Description | Input / Input Required |
-|------|-------------------------|------------------------|
-| **brainstorm** | Mulai sesi brainstorming | `topic` (string, wajib/required), `context` (object, optional) |
-| **create_git_worktree** | Buat git worktree baru | `branchName` (wajib/required), `basedOn` (optional) |
-| **write_implementation_plan** | Buat rencana implementasi | `planPath` (wajib/required), `design` (wajib/required) |
-| **execute_plan** | Eksekusi plan dengan TDD | `planPath` (wajib/required), `batchSize` (optional) |
-| **systematic_debug** | Debugging sistematis | `issue` (wajib/required), `evidence` (optional) |
-| **request_code_review** | Request code review | `taskNumber` (wajib/required), `planPath` (wajib/required) |
-| **apply_code_review_feedback** | Terapkan feedback | `taskNumber` (wajib/required), `feedback` (wajib/required) |
-| **finish_development_branch** | Selesaikan branch | `action` (wajib/required), `branchName` (wajib/required) |
-| **get_status** | Cek status proyek aktif | Tidak ada input / No input |
-
----
-
-## 🔧 Configuration / Konfigurasi
-
-| Parameter | Type / Tipe | Default | Deskripsi / Description |
-|-----------|-------------|---------|-------------------------|
-| `brainstormingMode` | enum | standard | Mode brainstorming |
-| `maxTasksPerPlan` | number | 5 | Maksimal tasks per rencana / Max tasks per plan |
-| `enableVerification` | boolean | true | Aktifkan verifikasi otomatis / Enable auto verification |
-| `saveDesignDocs` | boolean | true | Simpan dokumen desain / Save design documents |
-| `tddEnforced` | boolean | true | Paksa TDD / Enforce TDD (no code without test first) |
-| `debuggingStrictMode` | boolean | true | Paksa debugging sistematis / Enforce systematic debugging |
-| `useGitWorktrees` | boolean | true | Gunakan git worktrees / Use git worktrees |
-
----
-
 ## 🔄 Workflow / Alur Kerja
 
 ```
@@ -341,26 +276,33 @@ Phase 4: Fix & Verify
 
 ```
 /home/clawgator-superpowers/
-├── SKILL.md                    (11KB - Main skill documentation)
-├── openclaw.plugin.json        (Plugin configuration)
+├── SKILL.md                    (Main skill documentation)
 ├── package.json                 (Metadata)
 ├── README.md                    (This file - Usage guide)
-├── references/                   (Reference documentation)
-└── skills/                      (14 sub-skills from obra/superpowers)
+├── LICENSE                      (MIT License)
+├── CONTRIBUTING.md              (Contribution guide)
+└── skills/                      (15 sub-skills)
     ├── using-superpowers/
     ├── brainstorming/
     ├── writing-plans/
     ├── executing-plans/
     ├── test-driven-development/
+    │   └── testing-anti-patterns.md
     ├── systematic-debugging/
+    │   └── (reference files)
     ├── using-git-worktrees/
     ├── subagent-driven-development/
+    │   └── (prompts)
     ├── dispatching-parallel-agents/
     ├── requesting-code-review/
+    │   └── code-reviewer.md
     ├── receiving-code-review/
     ├── verification-before-completion/
     ├── finishing-a-development-branch/
-    └── writing-skills/
+    ├── writing-skills/
+    │   └── (references + examples)
+    └── frontend-design/         (NEW - from Anthropic)
+        └── SKILL.md
 ```
 
 ---
@@ -391,8 +333,8 @@ Phase 4: Fix & Verify
 
 | Item | Value / Nilai |
 |------|---------------|
-| **Version / Versi** | 1.0.0 |
-| **Based on / Berdasarkan** | obra/superpowers (100% workflow, 14 sub-skills) |
+| **Version / Versi** | 1.0.1 |
+| **Based on / Berdasarkan** | obra/superpowers (100% workflow, 15 sub-skills) |
 | **License / Lisensi** | MIT (same as obra/superpowers) |
 | **Team / Tim** | ClawGator Team |
 | **Language Support / Dukungan Bahasa** | 🌏 Bahasa Indonesia & English |

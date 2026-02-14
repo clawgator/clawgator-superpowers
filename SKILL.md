@@ -147,6 +147,12 @@ Permintaan Pengembangan
 |-------|--------------|--------|
 | **writing-skills** | Membuat skill baru | Struktur skill OpenClaw |
 
+### 🎨 Skills Design
+
+| Skill | Kapan Dipakai | Fungsi |
+|-------|--------------|--------|
+| **frontend-design** | Design UI/UX | Komponen, layout, styling |
+
 ## Prinsip Utama
 
 ### Iron Laws
@@ -204,7 +210,7 @@ Contoh:
 
 Skill ini terintegrasi penuh dengan OpenClaw:
 - ✅ Automatic triggers pada kata kunci: "build", "create", "implement", "fix", "add"
-- ✅ Folder `skills/` berisi 14 sub-skills lengkap
+- ✅ Folder `skills/` berisi 15 sub-skills lengkap
 - ✅ Sub-skills trigger otomatis berdasarkan konteks
 - ✅ `using-superpowers` sebagai entry point
 - ✅ Tools: `brainstorm`, `plan_review`, `get_status`
@@ -251,7 +257,8 @@ Skill ini memastikan tim ClawGator selalu:
 │   ├── receiving-code-review/   - Terima feedback
 │   ├── verification-before-completion/ - Verify fix
 │   ├── finishing-a-development-branch/ - Wrap up
-│   └── writing-skills/          - Buat skill baru
+│   ├── writing-skills/          - Buat skill baru
+│   └── frontend-design/         - Design UI/UX
 └── README.md                     - Dokumentasi lengkap
 ```
 
@@ -286,7 +293,7 @@ Skill akan otomatis:
 
 ---
 
-**Versi:** 1.0.0
+**Versi:** 1.0.1
 **Dibuat untuk:** Tim ClawGator
-**Didasarkan:** obra/superpowers (100% workflow, 14 sub-skills)
+**Didasarkan:** obra/superpowers (100% workflow, 15 sub-skills)
 **Lisensi:** MIT
